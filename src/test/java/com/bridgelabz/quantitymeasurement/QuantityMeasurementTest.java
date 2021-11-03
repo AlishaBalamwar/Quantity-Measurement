@@ -51,6 +51,15 @@ public class QuantityMeasurementTest {
     public void whenGivenFeetAndInchObjects_shouldNotEquals() {
         Length length1 = new Length(Length.Unit.FEET, 1.0);
         Length length2 = new Length(Length.Unit.INCH, 1.0);
+        length1.compare(length2);
         Assert.assertNotEquals(length1, length2);
+    }
+
+    @Test
+    public void whenGivenFeetAnd12InchObjects_shouldTrue() {
+        Length length1 = new Length(Length.Unit.FEET, 1.0);
+        Length length2 = new Length(Length.Unit.INCH, 12.0);
+        boolean compareCheck = length1.compare(length2);
+        Assert.assertTrue(compareCheck);
     }
 }
