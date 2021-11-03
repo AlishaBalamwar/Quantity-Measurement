@@ -27,6 +27,6 @@ public class Length {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Length length = (Length) o;
-        return java.lang.Double.compare(length.value, value) == 0;
+        return java.lang.Double.compare(length.value, value) == 0 && unit == length.unit;
     }
 }
