@@ -1,47 +1,23 @@
 package com.bridgelabz.quantitymeasurement;
 
-import java.util.Objects;
-
 /**
- * @author Hp
+ * enum implements an interface
  */
-public class Length {
-    private static final double FEET_TO_INCH = 12.0;
+public enum Length implements MeasurementUnits {
+    FEET(12.0), INCH(1.0);
 
-    enum Unit {FEET, INCH}
+    private final double convertionValue;
 
-    ;
-
-    private final Unit unit;
-    private final double value;
-
-    public Length(Unit unit, double value) {
-        this.unit = unit;
-        this.value = value;
+    private Length(double convertionValue) {
+        this.convertionValue = convertionValue;
     }
 
     /**
-     * @param that -> is the reference where we convert and compare the values
-     * @return
-     */
-    public boolean compare(Length that) {
-        if (this.unit.equals(that.unit))
-            return this.equals(that);
-        if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
-            return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
-        return false;
-    }
-
-    /**
-     * @param o -> object
-     * @return ->Returns boolean value by comparing objects. If the objects are
-     * same it returns true.
+     * @param value-> getting value
+     * @return -> convert to base unit and return
      */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Length length = (Length) o;
-        return java.lang.Double.compare(length.value, value) == 0 && unit == length.unit;
+    public double convertToBaseUnit(double value) {
+        return value * convertionValue;
     }
 }
