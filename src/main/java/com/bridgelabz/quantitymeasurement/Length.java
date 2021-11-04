@@ -4,7 +4,7 @@ package com.bridgelabz.quantitymeasurement;
  * enum implements an interface
  */
 public enum Length implements MeasurementUnits {
-    FEET(12.0), INCH(1.0), YARD(36);
+    FEET(12.0), INCH(1.0), YARD(36), CENTIMETER(0.39);
 
     private final double convertionValue;
 
