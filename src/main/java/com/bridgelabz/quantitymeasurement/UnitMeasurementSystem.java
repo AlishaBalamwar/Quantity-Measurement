@@ -18,8 +18,6 @@ public class UnitMeasurementSystem {
      * @return
      */
     public boolean compare(UnitMeasurementSystem thatUnit) {
-        if (this.unit.getClass() != thatUnit.unit.getClass())
-            return false;
         if (this.unit.equals(thatUnit.unit))
             return this.equals(thatUnit);
         return Double.compare(this.unit.convertToBaseUnit(this.value), thatUnit.unit.convertToBaseUnit(thatUnit.value)) == 0;
