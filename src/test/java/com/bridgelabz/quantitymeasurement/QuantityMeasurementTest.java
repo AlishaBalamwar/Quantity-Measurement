@@ -62,4 +62,12 @@ public class QuantityMeasurementTest {
         boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void whenGiven3FeetAnd1Yard_shouldReturnTrue() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Length.FEET, 3.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Length.YARD, 1.0);
+        boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
+        Assert.assertTrue(compareCheck);
+    }
 }
