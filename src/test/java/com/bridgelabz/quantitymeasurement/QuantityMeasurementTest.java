@@ -41,10 +41,10 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void whenGiven0FeetAnd0Inch_shouldReturnEquals() {
+    public void whenGiven0FeetAnd0Inch_shouldReturnNotEquals() {
         UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Length.FEET, 0.0);
         UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Length.INCH, 0.0);
-        Assert.assertEquals(unitMeasurementSystem1, unitMeasurementSystem2);
+        Assert.assertNotEquals(unitMeasurementSystem1, unitMeasurementSystem2);
     }
 
     @Test
@@ -101,5 +101,13 @@ public class QuantityMeasurementTest {
         UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Length.YARD, 1.0);
         boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
         Assert.assertTrue(compareCheck);
+    }
+
+    @Test
+    public void whenGiven2InchAnd5Centimeter_shouldReturnFalse() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Length.INCH, 2.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Length.CENTIMETER, 5.08);
+        boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
+        Assert.assertFalse(compareCheck);
     }
 }
