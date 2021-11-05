@@ -150,4 +150,12 @@ public class QuantityMeasurementTest {
         boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void whenGivenMillilitreAndLitreValues_shouldReturnTrue() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Volume.MILLILITRE, 1000.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
+        Assert.assertTrue(compareCheck);
+    }
 }
