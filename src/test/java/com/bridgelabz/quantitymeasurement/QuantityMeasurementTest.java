@@ -158,4 +158,12 @@ public class QuantityMeasurementTest {
         boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void whenGivenGallonAndLitreValues_whenAdded_shouldReturnEqual() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Volume.GALLON, 1.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Volume.LITRE, 3.78);
+        double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
+        Assert.assertEquals(7.57, addedValue, 0.4);
+    }
 }
