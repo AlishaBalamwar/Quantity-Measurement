@@ -166,4 +166,12 @@ public class QuantityMeasurementTest {
         double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
         Assert.assertEquals(7.57, addedValue, 0.4);
     }
+
+    @Test
+    public void whenGivenMillilitreAndLitreValues_whenAdded_shouldReturnEqual() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Volume.MILLILITRE, 1000.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
+        Assert.assertEquals(2.0, addedValue, 0.1);
+    }
 }
