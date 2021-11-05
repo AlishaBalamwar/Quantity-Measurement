@@ -174,4 +174,12 @@ public class QuantityMeasurementTest {
         double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
         Assert.assertEquals(2.0, addedValue, 0.1);
     }
+
+    @Test
+    public void whenGivenMilligramAndKilogramValues_shouldReturnTrue() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Weight.KILOGRAM, 1.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Weight.MILLIGRAM, 1000.0);
+        boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
+        Assert.assertTrue(compareCheck);
+    }
 }
