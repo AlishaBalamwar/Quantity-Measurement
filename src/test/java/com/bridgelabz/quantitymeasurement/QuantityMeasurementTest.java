@@ -118,4 +118,12 @@ public class QuantityMeasurementTest {
         double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
         Assert.assertEquals(4.0, addedValue, 0.1);
     }
+
+    @Test
+    public void whenGiven1feetAnd2InchValues_whenAdded_shouldReturnEqual() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Length.FEET, 1.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Length.INCH, 2.0);
+        double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
+        Assert.assertEquals(14.0, addedValue, 0.5);
+    }
 }
