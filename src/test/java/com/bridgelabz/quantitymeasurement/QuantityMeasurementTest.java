@@ -182,4 +182,12 @@ public class QuantityMeasurementTest {
         boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void whenGivenTonneAndKilogramValues_shouldReturnTrue() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Weight.TONNE, 1.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Weight.KILOGRAM, 1000.0);
+        boolean compareCheck = unitMeasurementSystem1.compare(unitMeasurementSystem2);
+        Assert.assertTrue(compareCheck);
+    }
 }
