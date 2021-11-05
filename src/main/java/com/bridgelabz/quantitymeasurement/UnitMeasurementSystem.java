@@ -1,5 +1,5 @@
 package com.bridgelabz.quantitymeasurement;
-import java.lang.*;
+
 /**
  * @author Hp
  */
@@ -8,7 +8,7 @@ public class UnitMeasurementSystem {
     private MeasurementUnits unit;
     private double value;
 
-    public UnitMeasurementSystem(MeasurementUnits unit,double value) {
+    public UnitMeasurementSystem(MeasurementUnits unit, double value) {
         this.unit = unit;
         this.value = value;
     }
@@ -23,13 +23,18 @@ public class UnitMeasurementSystem {
         return Double.compare(this.unit.convertToBaseUnit(this.value), thatUnit.unit.convertToBaseUnit(thatUnit.value)) == 0;
     }
 
-   /** public double add(UnitMeasurementSystem thatUnit) {
-        if ( this.unit.getClass() != thatUnit.unit.getClass ||
+    /**
+     * @param thatUnit-> it is the reference
+     *                   Here we compare the class and does it support addition
+     * @return-> Returns the added value in base unit
+     */
+    public double add(UnitMeasurementSystem thatUnit) {
+        if (this.unit.getClass() != thatUnit.unit.getClass() ||
                 !this.unit.supportAddition() || !thatUnit.unit.supportAddition())
             return 0.0;
         return this.unit.convertToBaseUnit(this.value) +
                 thatUnit.unit.convertToBaseUnit(thatUnit.value);
-    }*/
+    }
 
     /**
      * @param o -> object
@@ -41,6 +46,6 @@ public class UnitMeasurementSystem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UnitMeasurementSystem unitMeasurementSystem = (UnitMeasurementSystem) o;
-        return Double.compare(unitMeasurementSystem.value, value) == 0 && unit == unitMeasurementSystem.unit ;
+        return Double.compare(unitMeasurementSystem.value, value) == 0 && unit == unitMeasurementSystem.unit;
     }
 }
