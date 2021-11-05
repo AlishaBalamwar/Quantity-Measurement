@@ -1,10 +1,11 @@
 package com.bridgelabz.quantitymeasurement;
 
-public enum Volume {
+public enum Volume implements MeasurementUnits {
+    GALLON(3.78), LITRE(1.0), MILILITRES(0.001);
 
     private final double convertionValue;
 
-    private Length(double convertionValue) {
+    private Volume(double convertionValue) {
         this.convertionValue = convertionValue;
     }
 
