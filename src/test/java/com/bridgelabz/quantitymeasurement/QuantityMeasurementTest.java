@@ -191,11 +191,12 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(compareCheck);
     }
 
+
     @Test
-    public void whenGivenTonneAndMilligramValues_whenAdded_shouldReturnEqual() {
-        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Weight.TONNE, 1.0);
-        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Weight.MILLIGRAM, 1000.0);
-        double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
-        Assert.assertEquals(1001.0, addedValue, 0.1);
+    public void whenGivenFahrenheitAndCelciusValues_whenAdded_shouldReturnTrue() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 212.0);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Temperature.CELCIUS, 100.0);
+        Boolean comparedValue = unitMeasurementSystem1.compare(unitMeasurementSystem2);
+        Assert.assertTrue(comparedValue);
     }
 }
