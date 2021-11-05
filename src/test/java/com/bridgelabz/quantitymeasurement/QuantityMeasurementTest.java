@@ -134,4 +134,12 @@ public class QuantityMeasurementTest {
         double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
         Assert.assertEquals(24.0, addedValue, 0.5);
     }
+
+    @Test
+    public void whenGivenCentimeterAndInchValues_whenAdded_shouldReturnEqual() {
+        UnitMeasurementSystem unitMeasurementSystem1 = new UnitMeasurementSystem(Length.CENTIMETER, 2.5);
+        UnitMeasurementSystem unitMeasurementSystem2 = new UnitMeasurementSystem(Length.INCH, 2.0);
+        double addedValue = unitMeasurementSystem1.add(unitMeasurementSystem2);
+        Assert.assertEquals(3.0, addedValue, 0.5);
+    }
 }
