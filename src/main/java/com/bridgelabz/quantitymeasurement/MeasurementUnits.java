@@ -6,5 +6,5 @@ package com.bridgelabz.quantitymeasurement;
 public interface MeasurementUnits {
     public double convertToBaseUnit(double value);
 
-    //public boolean supportAddition();
+    public boolean supportAddition();
 }
