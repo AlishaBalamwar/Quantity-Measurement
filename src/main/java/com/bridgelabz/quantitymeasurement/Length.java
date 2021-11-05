@@ -18,6 +18,11 @@ public enum Length implements MeasurementUnits {
      */
     @Override
     public double convertToBaseUnit(double value) {
-        return value * convertionValue;
+        return value*convertionValue;
     }
+
+    /**@Override
+    public boolean supportAddition() {
+        return true;
+    }*/
 }
