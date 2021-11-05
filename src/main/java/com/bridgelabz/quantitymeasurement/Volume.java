@@ -1,7 +1,7 @@
 package com.bridgelabz.quantitymeasurement;
 
 public enum Volume implements MeasurementUnits {
-    GALLON(3.78), LITRE(1.0), MILILITRES(0.001);
+    GALLON(3.78), LITRE(1.0), MILLILITRE(0.001);
 
     private final double convertionValue;
 
